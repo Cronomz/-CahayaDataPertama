@@ -1,0 +1,14 @@
+.chart-container {
+    position: relative;
+    padding: 40px;
+}
+
+.label-x {
+    position: absolute;
+    top: 260px;
+}
+.label-y {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}

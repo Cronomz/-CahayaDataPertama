@@ -1,0 +1,9 @@
+.game-review {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.right-btn-img {
+    transform: scaleX(-1);
+}
