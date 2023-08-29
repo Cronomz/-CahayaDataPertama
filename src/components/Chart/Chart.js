@@ -14,7 +14,6 @@ function Chart(props) {
     window.addEventListener("resize", () => {
       setChartWidth(window.innerWidth - 200);
     })
-    console.log(props.yDataKey)
   },[])
 
   const yAxisFormatter = (value) => {
@@ -36,7 +35,6 @@ function Chart(props) {
     <div className="chart-container">
       <LineChart width={1000} height={300} data={props.data} animationDuration={300}>
         {props.yDataKey.map((e, index) => {
-          console.log("ydatakey:", e)
           return (<Line type="monotone" dataKey={e??"value"} stroke={COLORS[index%COLORS.length]}/>)
         })}
         <CartesianGrid  strokeDasharray="3 3"/>

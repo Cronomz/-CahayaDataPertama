@@ -37,25 +37,19 @@ function GameReview(props) {
     }, [])
 
     useEffect(() => {
-        console.log("data: ", data);
+        // console.log("data: ", data);
     }, [data])
 
     useEffect(() => {
-        console.log("timeData: ", sortedDataTime);
-        if (sortedDataTime[0]) {
-            console.log("month0: ", (new Date(sortedDataTime[0].timestamp)).getMonth(), (new Date(sortedDataTime[0].timestamp)))
-            console.log("month1: ", (new Date(sortedDataTime[9999].timestamp)).getMonth(), (new Date(sortedDataTime[9999].timestamp)))
-        }
+        // console.log("timeData: ", sortedDataTime);
     }, [sortedDataTime])
 
     useEffect(() => {
-        console.log("sources: ", sources);
+        // console.log("sources: ", sources);
     }, [sources])
 
     useEffect(() => {
-        console.log("change", dataBySource, sources)
         if (Object.keys(dataBySource).length && sources.length) {
-            console.log("change")
             // Second Card
             setDataSourceSentiment(Constants.sentimentCounter(dataBySource[sources[chosenSource]]));
 
@@ -68,7 +62,7 @@ function GameReview(props) {
     }, [chosenSource])
 
     useEffect(() => {
-        console.log("SourcesSentimentByDay: ", sourcesSentimentByDay)
+        // console.log("SourcesSentimentByDay: ", sourcesSentimentByDay)
     }, [sourcesSentimentByDay])
 
     const fetchData = () => {

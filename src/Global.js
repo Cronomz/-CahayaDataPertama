@@ -47,8 +47,6 @@ const Constants = {
         tempData.forEach((e, index) => {
             tempData[index] = {name: e.name, value: (e.numWord/e.numSentiment)}
         })
-
-        console.log("avg text", tempData);
         return tempData;
     },
 
