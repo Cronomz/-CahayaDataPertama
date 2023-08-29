@@ -2,6 +2,18 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    transform-origin: top center;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.chart-title {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .right-btn-img {

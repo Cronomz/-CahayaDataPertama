@@ -8,24 +8,22 @@ function CustomBarChart(props) {
   
 
   return (
-    <BarChart
-          width={500}
-          height={200}
-          data={props.data}
-          margin={{
-            top: 20,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis dataKey="value"/>
-          <Tooltip />
-          {/* <Legend /> */}
-          <Bar dataKey="value" stackId="a" fill="#8884d8" />
-        </BarChart>
+    <BarChart width={500}
+              height={200}
+              data={props.data}
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis dataKey="value"/>
+      <Tooltip />
+      <Bar dataKey="value" stackId="a" fill="#8884d8" />
+    </BarChart>
   );
 }
 

@@ -74,6 +74,19 @@ const Constants = {
                 dataCurDate.push(data[i]);
             }
         }
+
+        tempData.forEach((e, index) => {
+            if (e.Positive == null) {
+                e.Positive = 0;
+            }
+            if (e.Negative == null) {
+                e.Negative = 0;
+            }
+            if (e.Neutral == null) {
+                e.Neutral = 0;
+            }
+        })
+
         return tempData;
     },
 

@@ -29,6 +29,10 @@ function GameReview(props) {
 
 
     useEffect(()=> {
+        onResizeWindow();
+        window.addEventListener("resize", () => {
+            onResizeWindow();
+        })
         fetchData()
     }, [])
 
@@ -105,6 +109,10 @@ function GameReview(props) {
         })
     }
     
+    const onResizeWindow = () => {
+        document.getElementsByClassName("game-review")[0].style.transform = `scale(${Math.min(1800, window.innerWidth)/1800})`;
+        // document.getElementsByClassName("game-review")[0].style.marginTop = "-550px"
+    }
 
     const onClickRightSource = () => {
         if (chosenSource < sources.length - 1) {
@@ -116,7 +124,7 @@ function GameReview(props) {
 
     const onClickLeftSource = () => {
         if (chosenSource > 0) {
-            setChosenSource(chosenSource-1);
+            setChosenSource(chosenSource - 1);
         } else {
             setChosenSource(sources.length - 1);
         }
@@ -125,12 +133,12 @@ function GameReview(props) {
     return (
         <div className="game-review">
             <Card style={{boxShadow: cardShadow, minHeight: "800px", maxWidth: "1800px", width: "auto"}}>
-                <div style={{marginBottom: "20px"}}>Game Reviews</div>
+                <div className="page-title">CDP Game Reviews</div>
                 <div style={{display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center"}}>
                     {/* First Card */}
                     <Card style={{boxShadow: cardShadow, height: "min-content"}}>
                         <div className='chart-title'>
-                            Review Sources
+                            Total Review Sources
                         </div>
                         <CustomPieChart data={dataBySourceLength}/>
                     </Card>
@@ -138,19 +146,23 @@ function GameReview(props) {
                     {/* Second Card */}
                     <Card style={{boxShadow: cardShadow, height: "min-content"}}>
                         <div className='chart-title'>
-                            {sources[chosenSource]} Review
+                            {sources[chosenSource]} Review Sentiments
                         </div>
                         <div style={{display: "flex", alignItems: 'center'}}>
-                            <div onClick={onClickLeftSource} ><img src='assets/icons/left-arrow.png'/></div>
+                            <div onClick={onClickLeftSource} >
+                                <img src='assets/icons/left-arrow.png'/>
+                            </div>
                             <CustomPieChart width={360} data={dataSourceSentiment}/>
-                            <div onClick={onClickRightSource}><img className='right-btn-img' src='assets/icons/left-arrow.png'/></div>
+                            <div className='' onClick={onClickRightSource}>
+                                <img className='right-btn-img' src='assets/icons/left-arrow.png'/>
+                            </div>
                         </div>
                     </Card>
 
                     {/* Third Card */}
                     <Card style={{boxShadow: cardShadow, height: "min-content"}}>
                         <div className='chart-title'>
-                            {sources[chosenSource]} Review
+                            Average Words in {sources[chosenSource]} Review
                         </div>
                         <CustomBarChart data={dataSentimentAvgText} 
                                         width={500}
@@ -160,6 +172,9 @@ function GameReview(props) {
                     
                     {/* Fourth Card */}
                     <Card style={{boxShadow: cardShadow, height: "min-content"}}>
+                        <div className='chart-title'>
+                            {sources[chosenSource]} Sentiments Review by Day
+                        </div>
                         <Chart data={sourcesSentimentByDay} 
                                 yDataKey={["Positive", "Negative", "Neutral"]} 
                                 labelY={`Number of ${sources[chosenSource]} Reviews`}

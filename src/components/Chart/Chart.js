@@ -43,6 +43,7 @@ function Chart(props) {
         <XAxis dataKey={props.xDataKey?? "timestamp"} tickFormatter={props.xAxisFormatter} tickSize={20} height={30} fontSize={"15px"} tick={<XAxisTick/>}/>
         <YAxis  tickFormatter={props.yAxisFormatter} width={40} allowDataOverflow={true} fontSize={"20px"} tickSize={10}/>
         {/* <Tooltip content={<CustomToolTip/>}></Tooltip> */}
+        <Tooltip />
         <Legend />
       </LineChart>
       <div className="label-y">{props.labelY}</div>
