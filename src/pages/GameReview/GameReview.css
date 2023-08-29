@@ -12,10 +12,25 @@
 }
 
 .chart-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
+.left-btn-img {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.left-btn-img:hover {
+    transform: translateX(-5px);
+}
+
 .right-btn-img {
+    transition: 0.2s;
+    cursor: pointer;
     transform: scaleX(-1);
+}
+
+.right-btn-img:hover {
+    transform: scaleX(-1) translateX(-5px);
 }

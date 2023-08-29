@@ -143,7 +143,7 @@ function GameReview(props) {
                             {sources[chosenSource]} Review Sentiments
                         </div>
                         <div style={{display: "flex", alignItems: 'center'}}>
-                            <div onClick={onClickLeftSource} >
+                            <div className='left-btn-img' onClick={onClickLeftSource} >
                                 <img src='assets/icons/left-arrow.png'/>
                             </div>
                             <CustomPieChart width={360} data={dataSourceSentiment}/>
