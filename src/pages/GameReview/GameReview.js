@@ -130,7 +130,7 @@ function GameReview(props) {
                 <div className="page-title">CDP Game Reviews</div>
                 <div style={{display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center"}}>
                     {/* First Card */}
-                    <Card style={{boxShadow: cardShadow, height: "min-content"}}>
+                    <Card style={{boxShadow: cardShadow, height: "min-content", animationDelay: "0.1s"}} isAnimated={true}>
                         <div className='chart-title'>
                             Total Review Sources
                         </div>
@@ -138,7 +138,7 @@ function GameReview(props) {
                     </Card>
 
                     {/* Second Card */}
-                    <Card style={{boxShadow: cardShadow, height: "min-content"}}>
+                    <Card style={{boxShadow: cardShadow, height: "min-content", animationDelay: "0.3s"}} isAnimated={true}>
                         <div className='chart-title'>
                             {sources[chosenSource]} Review Sentiments
                         </div>
@@ -154,7 +154,7 @@ function GameReview(props) {
                     </Card>
 
                     {/* Third Card */}
-                    <Card style={{boxShadow: cardShadow, height: "min-content"}}>
+                    <Card style={{boxShadow: cardShadow, height: "min-content", animationDelay: "0.5s"}} isAnimated={true}>
                         <div className='chart-title'>
                             Average Words in {sources[chosenSource]} Review
                         </div>
@@ -165,7 +165,7 @@ function GameReview(props) {
                     </Card>
                     
                     {/* Fourth Card */}
-                    <Card style={{boxShadow: cardShadow, height: "min-content"}}>
+                    <Card style={{boxShadow: cardShadow, height: "min-content", animationDelay: "0.7s"}} isAnimated={true}>
                         <div className='chart-title'>
                             {sources[chosenSource]} Sentiments Review by Day
                         </div>

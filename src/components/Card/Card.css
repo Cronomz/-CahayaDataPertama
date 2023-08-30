@@ -1,0 +1,22 @@
+.card-container {
+    /* animation: move 0.5s; */
+}
+
+.card-container-animated {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: move 0.5s forwards;
+}
+
+
+@keyframes move {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 256;
+
+    }
+}
